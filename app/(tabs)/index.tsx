@@ -6,19 +6,21 @@ import CardMovie from '../components/cardmovie';
 
 export default function Home() {
   return (
-    <>
+    <ScrollView className="bg-tertiary p-4">
       <Stack.Screen options={{ title: 'Home' }} />
-      <View className="bg-tertiary p-4" style={{ backgroundColor: '121011' }}>
+      <View>
         <HeaderHome />
         <Featured />
-        <Text style={{ marginTop: 84, color: '#FFF' }}>Recommended Movies</Text>
-        <ScrollView horizontal style={{ gap: 8 }}>
+        <Text style={{ marginTop: 76, color: '#FFF', fontWeight: 'bold', fontSize: 18 }}>
+          Recommended Movies
+        </Text>
+        <ScrollView horizontal style={{ overflow: 'visible' }}>
           <CardMovie />
           <CardMovie />
           <CardMovie />
           <CardMovie />
         </ScrollView>
       </View>
-    </>
+    </ScrollView>
   );
 }
