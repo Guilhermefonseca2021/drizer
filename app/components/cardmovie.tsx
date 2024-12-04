@@ -1,16 +1,21 @@
 import { Image, Text, View } from "react-native";
 
-export default function CardMovie() {
+type CardProps = {
+  imageUri: string;
+  title: string;
+}
+
+export default function CardMovie({ imageUri, title }: CardProps) {
   return (
-      <View className="m-2">
+      <View className="w-24 mx-2 items-center">
           <Image
           className="overflow-hidden rounded-3xl"
           source={{
-            uri: 'https://tse2.mm.bing.net/th?id=OIP.rI9YJxWtLbLuePA7rA-cTAHaDt&pid=Api&P=0&h=180',
+            uri: `${imageUri}`,
           }}
-          style={{ width: 140, height: 170 }}
+          style={{ width: 100, height: 150 }}
         />
-          <Text className="font-bold text-white my-1">Flash (2019)</Text>
+      <Text className="font-bold text-white my-1 text-sm w-28">{title}</Text>
     </View>
   )
 }

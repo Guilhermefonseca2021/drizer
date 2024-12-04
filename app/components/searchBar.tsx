@@ -1,15 +1,16 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { Link } from 'expo-router';
-import React from 'react';
+import React, { useState } from 'react';
 import { Pressable, Text, TextInput, View, ViewBase } from 'react-native';
+import useMovieStore from '../contexts/useMovieStore';
 
 export default function SearchBar() {
-  const [text, onChangeText] = React.useState('');
+  const [text, onChangeText] = useState('');
+  const { searchMovie } = useMovieStore()
   const navigation = useNavigation();
 
-  const sendData = () => {
-    console.log('Sent data:', text); // Replace with your own logic
+  const handleSearch = () => {
+    searchMovie(text)
   };
 
   return (
@@ -21,13 +22,13 @@ export default function SearchBar() {
           </Pressable>
         </View>
         <TextInput
-          className="h-12 w-full flex-1 rounded-full bg-secondary mx-2 text-white"
+          className="mx-2 h-12 w-full flex-1 rounded-full bg-secondary p-4 text-white"
           onChangeText={onChangeText}
           value={text}
+          placeholder="Search..."
+          placeholderTextColor="#ccc"
+          onSubmitEditing={handleSearch}
         />
-      </View>
-      <View className="my-4">
-        <Text className="text-xl font-bold text-white">Recent Search:</Text>
       </View>
     </View>
   );

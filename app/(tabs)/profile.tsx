@@ -1,6 +1,5 @@
 import { Stack } from 'expo-router';
 import { View } from 'react-native';
-import {  } from 'nativewind'
 
 export default function Profile() {
   return (
