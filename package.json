@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
-    "@react-navigation/native": "^7.0.0",
     "@types/axios": "^0.9.36",
     "axios": "^1.7.8",
     "expo": "^52.0.11",
@@ -38,6 +37,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@react-navigation/native": "^7.0.13",
     "@types/react": "~18.3.12",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",

@@ -34,9 +34,10 @@ export interface MovieItem {
 
 // Define the store's state and actions
 interface MovieStore {
-  items: MovieItem[];          // For storing fetched movie data
-  searchedItems: MovieItem[];  // For storing searched movie results
-  fetchItems: () => Promise<void>;
+  items: MovieItem[];          
+  searchedItems: MovieItem[];
+  imdbMovie: MovieItem | null;
+  fetchItems: (imdbID: string) => Promise<void>;
   searchMovie: (query: string) => Promise<void>;
 }
 
@@ -44,10 +45,9 @@ interface MovieStore {
 const useMovieStore = create<MovieStore>((set) => ({
   items: [],
   searchedItems: [],  // Initializing the searchedItems state
-  
-  // Fetch items from an API
-  fetchItems: async () => {
-    const url = 'https://www.omdbapi.com/?i=tt3896198&apikey=148d83e8';
+  imdbMovie: null,
+  fetchItems: async (imdbID) => {
+    const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=148d83e8`;
     try {
       const response = await axios.get<MovieItem>(url);
       console.log('API Response:', response.data); // Debug the API response

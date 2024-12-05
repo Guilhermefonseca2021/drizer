@@ -1,6 +1,5 @@
 import { Tabs } from 'expo-router';
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { FontAwesome } from '@expo/vector-icons';
 import { Text, View } from 'react-native';
 
@@ -53,13 +52,6 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarStyle: { height: 0, width: 0, display: 'none' },
         }}
       />
       <Tabs.Screen
