@@ -33,7 +33,7 @@ export default function Explore() {
             searchedItems.map((movie, index) => (
               <Link
                 href={{
-                  pathname: '/(tabs)/explore/[imdbID]',
+                  pathname: '/(tabs)/explore/[id]',
                   params: { id: `${movie.imdbID}` },
                 }}
                 key={movie.imdbID || index}>

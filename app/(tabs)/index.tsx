@@ -22,7 +22,7 @@ export default function Home() {
         <Text style={{ marginTop: 76, color: '#FFF', fontWeight: 'bold', fontSize: 18 }}>
           Recommended Movies
         </Text>
-        <ScrollView horizontal style={{ overflow: 'visible', margin: 14 }}>
+        <ScrollView horizontal style={{ overflow: 'visible', marginTop: 14 }}>
           {stateMovie.items.map((movie, index) => (
             <Pressable
               onPress={() => console.log(movie.imdbID)}
