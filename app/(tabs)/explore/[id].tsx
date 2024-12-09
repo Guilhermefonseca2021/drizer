@@ -2,7 +2,6 @@ import { View, Text, Image } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect } from 'react';
 import useMovieStore from '~/app/contexts/useMovieStore';
-import HeaderHome from '~/app/components/headerHome';
 import MovieSection from '~/app/components/page/moviesection';
 
 export default function MovieDetails() {
